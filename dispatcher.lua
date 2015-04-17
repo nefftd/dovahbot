@@ -38,7 +38,7 @@ function dis_api:register(event,func)
   
   if events[func] or registration_queue[func] then return end
   
-  if #self.dispatch_queue[event] > 0 then
+  if #self.dispatch_queue[event] == 0 then
     -- We're not in the process of dispatching: insert directly
     events[func] = true
   else
@@ -72,7 +72,7 @@ local nop = function() end
 local function dispatch(self,event)
   local errorhandler = self.errorhandler or nop
   local succ,err
-  local args = self.dispatch_queue[1]
+  local args = self.dispatch_queue[event][1]
   for func in pairs(self.events[event]) do
     succ,err = pcall(func,unpack(args,1,args.n))
     if not succ then
