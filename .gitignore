@@ -9,6 +9,7 @@ Thumbs.db
 
 # luac output
 luac.out
+*.luac
 
 # luarocks stuff
 *.src.rock
