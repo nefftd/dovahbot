@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# luac output
+luac.out
+
+# luarocks stuff
+*.src.rock
+
+# packages
+*.7z
+*.gz
+*.rar
+*.tar
+*.zip
